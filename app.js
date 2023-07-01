@@ -19,11 +19,11 @@ maxNum.textContent = max
 
 // play again event listener
 
-game.addEventListener('mousedown', function(e){
-    if(e.target.className === 'play-again'){
-        window.location.reload()
-    }
-    console.log(1)
+game.addEventListener('mousedown', function (e) {
+  if (e.target.className === 'play-again') {
+    window.location.reload()
+  }
+  console.log(1)
 })
 
 // listen for guess
@@ -36,28 +36,11 @@ guessBtn.addEventListener('click', function (e) {
   }
   //   check if won
   if (guess === winningNum) {
-    // Disable input
-    // guessInput.disabled = true
-    // // change border color
-    // guessInput.style.borderColor = 'green'
-    // // set message
-    // setMessage(`${winningNum} is correct, YOU WIN `, 'green')
     gameOver(true, `${winningNum} is correct, YOU WIN`)
   } else {
     // wrong number
     guessesLeft -= 1
     if (guessesLeft === 0) {
-      // game over lost
-      // Disable input
-      //   guessInput.disabled = true
-      //   // change border color
-      //   guessInput.style.borderColor = 'red'
-
-      //   // set message
-      //   setMessage(
-      //     `game over you lost. The correct number was ${winningNum} `,
-      //     'red'
-      //   )
       gameOver(
         false,
         `game over you lost. The correct number was ${winningNum} `
@@ -95,9 +78,8 @@ function gameOver(won, msg) {
 }
 
 // get winningNum
-function getRandomNumber(min, max){
-    return Math.floor(Math.random()*(max-min +1)+min)
-
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
 function setMessage(msg, color) {
